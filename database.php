@@ -10,13 +10,13 @@
 
 $os = getenv('CLEARDB_DATABASE_URL');
 if ($os) {
-	$url = parse_url($os);
+    $url = parse_url($os);
 }
 $settings = array(
     'driver' => 'mysql',
     'host' => $os ? $url["host"] : 'localhost',
     'port' => $os ? $url["port"] : 3306,
-    'database' => $os ? $url["path"] : 'heroku_6683995862e0b47',
+    'database' => $os ? substr($url["path"], 1) : 'heroku_5edc039c0c4656d',
     'username' => $os ? $url["user"] : 'root',
     'password' => $os ? $url["pass"] : '',
     'charset'   => 'utf8',
