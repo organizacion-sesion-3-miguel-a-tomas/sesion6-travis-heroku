@@ -10,7 +10,7 @@
 
 $os = getenv('CLEARDB_DATABASE_URL');
 if ($os) {
-    $url = parse_url($os);
+	$url = parse_url($os);
 }
 $settings = array(
     'driver' => 'mysql',
